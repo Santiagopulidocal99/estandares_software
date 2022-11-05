@@ -1,0 +1,27 @@
+Feature: Solicitud de cuenta
+
+Crear cuenta para un entorno bancario
+
+@mytag
+Scenario: Documento de identidad original
+Given La persona extravió su documento
+When Solicite su cuenta
+Then La entidad bancaria no le podrá dar la cuenta 
+
+@mytag
+Scenario: Documento de identidad original
+Given La persona Cuenta con contraseña como documento de identidad
+When Solicite su cuenta
+Then La entidad bancaria no le podrá dar la cuenta 
+
+@mytag
+Scenario: Datos de un contacto cercano
+Given La persona no cuenta con los datos básico de algún allegado
+When El banco le solicita datos de algún contacto
+Then El banco le dará la cuenta bancaria, pero sele estará recordado al cliente el diligenciamiento de la información de segundo contacto
+
+@mytag
+Scenario: Buscar la oficina mas cercana para registrar la huella
+Given La persona buna la oficina más cercana a su residencia
+When El banco le registra las huellas dactilares
+Then La persona obtiene su cuenta con la entidad bancaria
